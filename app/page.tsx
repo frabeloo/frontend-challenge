@@ -1,11 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Scoreboard from '@/components/Scoreboard';
-import MoveButton from '@/components/MoveButton';
+import MoveButton from '@/components/MoveButton/MoveButton';
 import ResultModal from '@/components/ResultModal';
-import rock from 'p/rock.png';
-import paper from 'assets/paper.png';
-import scissor from 'assets/scissor.png';
 
 type Move = 'Pedra' | 'Papel' | 'Tesoura';
 
@@ -40,15 +37,15 @@ export default function HomePage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen gap-6 px-4">
-      <h1 className="text-3xl font-bold text-primary">Jokenpô</h1>
+    <div className="">
+      <h1 className="">Jokenpô</h1>
 
       <Scoreboard playerScore={playerScore} botScore={botScore} />
 
-      <div className="flex gap-4 mt-4">
-        <MoveButton imageSrc="rock.png" label="Pedra" onClick={() => handlePlay('Pedra')} />
-        <MoveButton imageSrc="paper.png" label="Papel" onClick={() => handlePlay('Papel')} />
-        <MoveButton imageSrc="scissor.png" label="Tesoura" onClick={() => handlePlay('Tesoura')} />
+      <div className="">
+        <MoveButton imageSrc="rock.png" color='green' label="Pedra" onClick={() => handlePlay('Pedra')} />
+        <MoveButton imageSrc="paper.png" color='yellow' label="Papel" onClick={() => handlePlay('Papel')} />
+        <MoveButton imageSrc="scissor.png" color='blue' label="Tesoura" onClick={() => handlePlay('Tesoura')} />
       </div>
 
       <ResultModal open={open} result={result} onClose={() => setOpen(false)} />

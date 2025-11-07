@@ -1,0 +1,42 @@
+/* MoveButton.css */
+.move-button {
+    --size: 10rem;                 /* ajuste o tamanho total do botão */
+    --inner-border: 1rem;         /* largura da "borda interna" */
+    /* cor da borda interna */
+    width: var(--size);
+    height: var(--size);
+    background: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+
+    /* borda interna via box-shadow inset */
+    box-shadow: inset 0 0 0 var(--inner-border) var(--inner-border-color);
+}
+.green{
+    --inner-border-color: #4CAF50; /* verde */
+}
+.yellow{
+    --inner-border-color: #FFEB3B; /* amarelo */
+}
+.blue{
+    --inner-border-color: #2196F3; /* azul */
+}
+
+/* foco acessível (opcional) */
+.move-button:focus {
+    outline: none;
+    box-shadow:
+        0 0 0 0.25rem rgba(0, 123, 255, 0.15), /* halo externo */
+        inset 0 0 0 var(--inner-border) var(--inner-border-color);
+}
+.move-button__img {
+    width: calc(var(--size) - 3.5 * var(--inner-border) - 1rem); /* ajuste o tamanho da imagem */
+    height: calc(var(--size) - 3.5 * var(--inner-border) - 1rem);
+    object-fit: contain;
+}
