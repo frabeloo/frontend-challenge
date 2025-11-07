@@ -3,7 +3,9 @@ import { useState } from 'react';
 import Scoreboard from '@/components/Scoreboard';
 import MoveButton from '@/components/MoveButton';
 import ResultModal from '@/components/ResultModal';
-import { FaHandRock, FaHandPaper, FaHandScissors } from 'react-icons/fa';
+import rock from 'p/rock.png';
+import paper from 'assets/paper.png';
+import scissor from 'assets/scissor.png';
 
 type Move = 'Pedra' | 'Papel' | 'Tesoura';
 
@@ -44,9 +46,9 @@ export default function HomePage() {
       <Scoreboard playerScore={playerScore} botScore={botScore} />
 
       <div className="flex gap-4 mt-4">
-        <MoveButton icon={<FaHandRock size={28} />} label="Pedra" onClick={() => handlePlay('Pedra')} />
-        <MoveButton icon={<FaHandPaper size={28} />} label="Papel" onClick={() => handlePlay('Papel')} />
-        <MoveButton icon={<FaHandScissors size={28} />} label="Tesoura" onClick={() => handlePlay('Tesoura')} />
+        <MoveButton imageSrc="rock.png" label="Pedra" onClick={() => handlePlay('Pedra')} />
+        <MoveButton imageSrc="paper.png" label="Papel" onClick={() => handlePlay('Papel')} />
+        <MoveButton imageSrc="scissor.png" label="Tesoura" onClick={() => handlePlay('Tesoura')} />
       </div>
 
       <ResultModal open={open} result={result} onClose={() => setOpen(false)} />
