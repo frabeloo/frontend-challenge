@@ -1,4 +1,6 @@
 'use client';
+import "./Scoreboard.css";
+
 interface ScoreboardProps {
   playerScore: number;
   botScore: number;
@@ -6,7 +8,8 @@ interface ScoreboardProps {
 
 export default function Scoreboard({ playerScore, botScore }: ScoreboardProps) {
   return (
-    <div className="flex justify-between w-full max-w-md bg-white shadow-md rounded-xl px-6 py-3">
+    <div className="bg-white flex-center box">
+      <h2 className="">SCORE</h2>
       <p className="font-semibold text-lg">👤 Você: {playerScore}</p>
       <p className="font-semibold text-lg">🤖 Bot: {botScore}</p>
     </div>

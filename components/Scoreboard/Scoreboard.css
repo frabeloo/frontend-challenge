@@ -1,0 +1,19 @@
+.bg-white{
+    background-color: white;
+}
+.flex-center{
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0.1rem;
+}
+.flex-center > *{
+    align-self: flex-start;
+}
+.flex-center > :nth-child(1){
+    align-self: center;
+}
+.box{
+    border-radius: 1rem;
+}

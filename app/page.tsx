@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
-import Scoreboard from '@/components/Scoreboard';
+import Scoreboard from '@/components/Scoreboard/Scoreboard';
 import MoveButton from '@/components/MoveButton/MoveButton';
-import ResultModal from '@/components/ResultModal';
+import ResultModal from '@/components/Result/Result';
 
 type Move = 'Pedra' | 'Papel' | 'Tesoura';
 
@@ -37,12 +37,11 @@ export default function HomePage() {
   };
 
   return (
-    <div className="">
-      <h1 className="">Jokenpô</h1>
+    <div className="flex">
 
       <Scoreboard playerScore={playerScore} botScore={botScore} />
 
-      <div className="">
+      <div className="moves-container">
         <MoveButton imageSrc="rock.png" color='green' label="Pedra" onClick={() => handlePlay('Pedra')} />
         <MoveButton imageSrc="paper.png" color='yellow' label="Papel" onClick={() => handlePlay('Papel')} />
         <MoveButton imageSrc="scissor.png" color='blue' label="Tesoura" onClick={() => handlePlay('Tesoura')} />
