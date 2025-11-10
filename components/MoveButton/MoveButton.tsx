@@ -1,20 +1,25 @@
 'use client';
 import "./MoveButton.css";
+type Move = 'Pedra' | 'Papel' | 'Tesoura'| null;
 
 interface MoveButtonProps {
-  imageSrc: string;
-  label: string;
-  color: string;
-  onClick: () => void;
+  onClick?: (move:Move) => void;
+  move: Move;
 }
-
-export default function MoveButton({ color,imageSrc, label, onClick }: MoveButtonProps) {
+const moveImages = {
+  Pedra: 'rock.png',
+  Papel: 'paper.png',
+  Tesoura: 'scissor.png'
+};
+export default function MoveButton({onClick, move }: MoveButtonProps) {
   return (
     <button
-      onClick={onClick}
-      className={`move-button ${color}`}
+      onClick={() => onClick?.(move)}
+      className={`move-button ${move ?? ''}`}
     >
-      <img src={imageSrc} alt={label} className="move-button__img" />
+      {move ? (
+        <img src={moveImages[move]} alt={move} className="move-button__img" />
+      ) : null}
     </button>
   );
 }

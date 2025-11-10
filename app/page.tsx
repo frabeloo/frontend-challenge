@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Scoreboard from '@/components/Scoreboard/Scoreboard';
 import MoveButton from '@/components/MoveButton/MoveButton';
 import ResultModal from '@/components/Result/Result';
+import Choosing from '@/components/Choosing/choosing';
 
 type Move = 'Pedra' | 'Papel' | 'Tesoura' | null;
 const moves: Move[] = ['Pedra', 'Papel', 'Tesoura'];
@@ -46,21 +47,38 @@ export default function HomePage() {
         setBotScore((s) => s + 1);
       }
       setOpen(false);
-    }, 1500);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [playerMove]);
+  
+  const playAgain = () => {
+    setPlayerMove(null);
+    setBotMove(null);
+    setResult(null);
+    setOpen(false);
+  };
 
   return (
     <div className="flex">
       <Scoreboard playerScore={playerScore} botScore={botScore} />
-
-      <div className="moves-container">
-        <MoveButton imageSrc="rock.png" color="green" label="Pedra" onClick={() => setPlayerMove('Pedra')} />
-        <MoveButton imageSrc="paper.png" color="yellow" label="Papel" onClick={() => setPlayerMove('Papel')} />
-        <MoveButton imageSrc="scissor.png" color="blue" label="Tesoura" onClick={() => setPlayerMove('Tesoura')} />
-      </div>
-      <ResultModal open={open} result={result} onClose={() => setOpen(false)} />
+      {!playerMove && (
+        <div className="moves-container">
+          {moves.map((move) => (
+            <MoveButton  key={move} move={move} onClick={setPlayerMove} />
+          ))}
+        </div>
+      )}
+      {playerMove && (
+        <>
+          <Choosing
+            playerMove={playerMove}
+            botMove={botMove}
+            open={open}
+          />
+          <ResultModal result={result} onPlayAgain={playAgain} />
+        </>
+      )}
     </div>
   );
 }
