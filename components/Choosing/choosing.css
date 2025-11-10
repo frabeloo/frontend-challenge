@@ -11,6 +11,6 @@
 }
 .buttons{
     display: inherit;
-    gap: 7rem;
+    gap: 7rem 4rem;
     margin-bottom: 4rem;
 }
