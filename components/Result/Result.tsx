@@ -1,4 +1,5 @@
 'use client';
+import './Result.css';
 interface ResultModalProps {
   result: string | null;
   onPlayAgain: () => void;
@@ -7,17 +8,14 @@ interface ResultModalProps {
 export default function ResultModal({result, onPlayAgain}: ResultModalProps) {
   if (!result) return null;
   return (
-    <div className="">
-      <div className="">
-        <h2 className="">Resultado</h2>
-        <p className="">{result}</p>
+    <div className="layout-result">
+        <p className="text-result">{result}</p>
         <button
           onClick={onPlayAgain}
-          className=""
+          className="button-result"
         >
           Jogar novamente
         </button>
-      </div>
     </div>
   );
 }

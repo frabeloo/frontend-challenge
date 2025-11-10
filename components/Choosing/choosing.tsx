@@ -29,9 +29,11 @@ export default function AfterChoiceScreen({
         )}
       </div>
       <div className="text">
-        {open ? 'MACHINE IS CHOOSING...' : 'MACHINE SELECTED '+ (botMove)?.toUpperCase() }
+        {open ? 'MACHINE IS CHOOSING...' : 'MACHINE SELECTED '}
       </div>
-
+      <div className="text">
+        {(botMove)?.toUpperCase()}
+      </div>
     </div>
   );
 }

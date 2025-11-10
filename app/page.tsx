@@ -18,7 +18,7 @@ export default function HomePage() {
 
   const handlePlay = (playerMove: Move, botMove: Move): string => {
     if (playerMove === botMove) {
-      return 'Empate!';
+      return 'Vocês Empataram!';
     }
     if (
       (playerMove === 'Pedra' && botMove === 'Tesoura') ||

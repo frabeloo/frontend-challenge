@@ -1,0 +1,30 @@
+.layout-result {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.text-result{
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+}
+.button-result {
+  background-color: #3b82f6;
+  color: white;
+  padding: 8px 32px;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+  width: fit-content;
+  min-width: 120px;
+  text-align: center;
+  user-select: none;
+}
+.button-result:hover {
+  background-color: #2563eb;
+}
