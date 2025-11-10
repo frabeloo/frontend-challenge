@@ -5,7 +5,7 @@ import MoveButton from '@/components/MoveButton/MoveButton';
 import ResultModal from '@/components/Result/Result';
 import Choosing from '@/components/Choosing/choosing';
 
-type Move = 'Pedra' | 'Papel' | 'Tesoura' | null;
+type Move = 'Pedra' | 'Papel' | 'Tesoura' | null | 'Choosing';
 const moves: Move[] = ['Pedra', 'Papel', 'Tesoura'];
 
 export default function HomePage() {

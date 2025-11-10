@@ -1,6 +1,8 @@
 'use client';
 import MoveButton from "../MoveButton/MoveButton";
-type Move = 'Pedra' | 'Papel' | 'Tesoura'| null;
+import './choosing.css';
+
+type Move = 'Pedra' | 'Papel' | 'Tesoura'| null | 'Choosing';
 
 interface AfterChoiceScreenProps {
   playerMove: Move
@@ -16,21 +18,20 @@ export default function AfterChoiceScreen({
   if (!playerMove) return null;
 
   return (
-    <div className="">
-      <div className="">
-        <div className="">YOUR CHOICE</div>
+    <div className="layout">
+        <div className="buttons">
         <MoveButton move={playerMove}/>
+        {!open && botMove && (
+              <MoveButton move={botMove}/>
+        )}
+        {open &&(
+            <MoveButton move={'Choosing'}/>
+        )}
       </div>
-
-      <div className="">
+      <div className="text">
         {open ? 'MACHINE IS CHOOSING...' : 'MACHINE SELECTED '+ (botMove)?.toUpperCase() }
       </div>
 
-      {botMove && (
-        <div className="">
-            <MoveButton move={botMove}/>
-        </div>
-      )}
     </div>
   );
 }

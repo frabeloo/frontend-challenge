@@ -24,7 +24,7 @@
 .Tesoura{
     --inner-border-color: #2980B9;
 }
-.red{
+.Choosing{
     --inner-border-color: #E74C3C;
 }
 .move-button:focus {
@@ -41,8 +41,9 @@
 .moves-container{
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center; 
+    gap: 1.5rem 7rem;
+    justify-content: center;
+    margin-top: 7rem;
 }
 .moves-container > .move-button {
     display: inline-flex;
